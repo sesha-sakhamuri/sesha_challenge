@@ -15,7 +15,7 @@ func TestNginxServer(t *testing.T) {
 		InsecureSkipVerify: true,
 	}
 
-	t.Log("Test 2: Checking if HTTPS is serving the static website...")
+	t.Log("Validate if HTTPS is serving the static website...")
 	http_helper.HttpGetWithRetryWithCustomValidation(t, httpsUrl, tlsConfig, 10, 1*time.Second, func(statusCode int, body string) bool {
 		return statusCode == 200
 	})
